@@ -2,7 +2,6 @@ plugins {
     kotlin("multiplatform")
     id("org.jetbrains.compose")
     id("com.android.library")
-    id("dev.icerock.mobile.multiplatform-resources")
     id("convention.publication")
 }
 group = project.property("GROUP").toString()
@@ -26,8 +25,8 @@ kotlin {
     sourceSets {
         commonMain.dependencies {
             implementation(compose.runtime)
-            implementation("dev.icerock.moko:resources:${rootProject.extra["moko_resources_version"]}")
-            implementation("dev.icerock.moko:resources-compose:${rootProject.extra["moko_resources_version"]}")
+            implementation(compose.ui)
+            implementation(compose.components.resources)
         }
         commonTest.dependencies {
             implementation(kotlin("test"))
@@ -45,19 +44,6 @@ android {
     }
     namespace = "com.softartdev.theme.pref"
 }
-multiplatformResources {
-    resourcesPackage.set("com.softartdev.theme.pref")
-}
-
 tasks.withType<AbstractPublishToMaven>().configureEach {
     dependsOn(tasks.withType<Sign>())
-}
-tasks.configureEach {
-    when (name) {
-        "androidDebugSourcesJar" -> dependsOn(tasks.named("generateMRandroidMain"))
-        "androidReleaseSourcesJar" -> dependsOn(tasks.named("generateMRandroidMain"))
-        "iosArm64SourcesJar" -> dependsOn(tasks.named("generateMRiosArm64Main"))
-        "iosSimulatorArm64SourcesJar" -> dependsOn(tasks.named("generateMRiosSimulatorArm64Main"))
-        "iosX64SourcesJar" -> dependsOn(tasks.named("generateMRiosX64Main"))
-    }
 }

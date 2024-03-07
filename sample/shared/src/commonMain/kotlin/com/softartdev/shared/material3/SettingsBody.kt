@@ -1,3 +1,5 @@
+@file:OptIn(ExperimentalResourceApi::class)
+
 package com.softartdev.shared.material3
 
 import androidx.compose.foundation.layout.Box
@@ -14,9 +16,11 @@ import com.softartdev.theme.material3.PreferenceItem
 import com.softartdev.theme.material3.SettingsScaffold
 import com.softartdev.theme.material3.ThemePreferenceItem
 import com.softartdev.theme.material3.ThemePreferencesCategory
-import com.softartdev.theme.pref.MR
 import com.softartdev.theme.pref.PreferableMaterialTheme.themePrefs
-import dev.icerock.moko.resources.compose.stringResource
+import com.softartdev.theme.pref.Res
+import com.softartdev.theme.pref.material_version
+import org.jetbrains.compose.resources.ExperimentalResourceApi
+import org.jetbrains.compose.resources.stringResource
 import kotlin.experimental.ExperimentalObjCRefinement
 import kotlin.native.HiddenFromObjC
 
@@ -38,7 +42,7 @@ fun SettingsBody(
 
 @Composable
 fun Material3SwitchPreferenceItem() = PreferenceItem(
-    title = stringResource(MR.strings.material_version),
+    title = stringResource(Res.string.material_version),
     vector = Icons.Filled.Style,
     secondaryText = { Text(AppState.secondaryText) },
     onClick = AppState.switchMaterialCallback,

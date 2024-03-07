@@ -25,7 +25,7 @@ kotlin {
             implementation(compose.material)
             implementation(compose.material3)
             implementation(compose.materialIconsExtended)
-            implementation("dev.icerock.moko:resources-compose:${rootProject.extra["moko_resources_version"]}")
+            implementation(compose.components.resources)
         }
         jvmMain.dependencies {
             implementation(compose.preview)

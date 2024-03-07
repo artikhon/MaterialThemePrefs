@@ -1,3 +1,5 @@
+@file:OptIn(ExperimentalResourceApi::class)
+
 package com.softartdev.theme.material
 
 import androidx.compose.material.AlertDialog
@@ -8,9 +10,13 @@ import androidx.compose.runtime.MutableState
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import com.softartdev.theme.pref.DialogHolder
-import com.softartdev.theme.pref.MR
+import com.softartdev.theme.pref.Res
 import com.softartdev.theme.pref.ThemeEnum
-import dev.icerock.moko.resources.compose.stringResource
+import com.softartdev.theme.pref.cancel
+import com.softartdev.theme.pref.choose_theme
+import com.softartdev.theme.pref.ok
+import org.jetbrains.compose.resources.ExperimentalResourceApi
+import org.jetbrains.compose.resources.stringResource
 
 @Composable
 fun ThemeDialog(
@@ -21,19 +27,19 @@ fun ThemeDialog(
     val previousState = remember { darkThemeState.value }
     AlertDialog(
         onDismissRequest = dismissDialog,
-        title = { Text(stringResource(MR.strings.choose_theme)) },
+        title = { Text(stringResource(Res.string.choose_theme)) },
         text = { RadioDialogContent(darkThemeState) },
         confirmButton = {
             Button(onClick = {
                 writePref(darkThemeState.value)
                 dismissDialog()
-            }) { Text(stringResource(MR.strings.ok)) }
+            }) { Text(stringResource(Res.string.ok)) }
         },
         dismissButton = {
             Button(onClick = {
                 darkThemeState.value = previousState
                 dismissDialog()
-            }) { Text(stringResource(MR.strings.cancel)) }
+            }) { Text(stringResource(Res.string.cancel)) }
         },
     )
 }

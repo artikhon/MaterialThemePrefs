@@ -62,7 +62,6 @@
 				75D38B032831E5C0002264D6 /* Compile Kotlin */,
 				75D38AE92831DB26002264D6 /* Frameworks */,
 				75D38AEA2831DB26002264D6 /* Resources */,
-				75D38B042831E654002264D6 /* mokoResources */,
 			);
 			buildRules = (
 			);
@@ -136,25 +135,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "cd ..\n\n./gradlew linkDebugExecutableIosSimulatorArm64\n\ncp sample/ios/build/bin/iosSimulatorArm64/debugExecutable/ios.kexe \"$TARGET_BUILD_DIR/$EXECUTABLE_PATH\"\n";
-		};
-		75D38B042831E654002264D6 /* mokoResources */ = {
-			isa = PBXShellScriptBuildPhase;
-			alwaysOutOfDate = 1;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			name = mokoResources;
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"$SRCROOT/../gradlew\" -p \"$SRCROOT/../\" :sample:ios:copyResourcesDebugExecutableIosSimulatorArm64 \\\n    -Pmoko.resources.BUILT_PRODUCTS_DIR=$BUILT_PRODUCTS_DIR \\\n    -Pmoko.resources.CONTENTS_FOLDER_PATH=$CONTENTS_FOLDER_PATH\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 

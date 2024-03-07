@@ -1,3 +1,5 @@
+@file:OptIn(ExperimentalResourceApi::class)
+
 package com.softartdev.shared
 
 import androidx.compose.foundation.ScrollState
@@ -7,11 +9,14 @@ import androidx.compose.runtime.MutableState
 import androidx.compose.runtime.ReadOnlyComposable
 import androidx.compose.runtime.mutableStateOf
 import com.softartdev.theme.pref.LocalThemePrefs
-import com.softartdev.theme.pref.MR
 import com.softartdev.theme.pref.PreferableMaterialTheme.themePrefs
+import com.softartdev.theme.pref.Res
 import com.softartdev.theme.pref.ThemeEnum
 import com.softartdev.theme.pref.ThemePrefs
-import dev.icerock.moko.resources.compose.stringResource
+import com.softartdev.theme.pref.switch_to_material_design_2
+import com.softartdev.theme.pref.switch_to_material_design_3
+import org.jetbrains.compose.resources.ExperimentalResourceApi
+import org.jetbrains.compose.resources.stringResource
 
 object AppState {
     val showMaterial3: MutableState<Boolean> = mutableStateOf(false)
@@ -22,8 +27,8 @@ object AppState {
     val secondaryText: String
         @Composable get() = stringResource(
             resource = when (showMaterial3.value) {
-                true -> MR.strings.switch_to_material_design_2
-                false -> MR.strings.switch_to_material_design_3
+                true -> Res.string.switch_to_material_design_2
+                false -> Res.string.switch_to_material_design_3
             }
         )
 

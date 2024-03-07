@@ -27,7 +27,7 @@ kotlin {
             implementation(compose.foundation)
             implementation(compose.material)
             implementation(compose.materialIconsExtended)
-            implementation("dev.icerock.moko:resources-compose:${rootProject.extra["moko_resources_version"]}")
+            implementation(compose.components.resources)
         }
         commonTest.dependencies {
             implementation(kotlin("test"))
