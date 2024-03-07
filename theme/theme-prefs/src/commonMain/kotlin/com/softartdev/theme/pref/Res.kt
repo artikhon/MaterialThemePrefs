@@ -1,4 +1,4 @@
-@file:OptIn(ExperimentalResourceApi::class)
+@file:OptIn(ExperimentalResourceApi::class, InternalResourceApi::class)
 
 package com.softartdev.theme.pref
 
@@ -18,8 +18,10 @@ import io.github.softartdev.`theme-prefs`.generated.resources.switch_to_material
 import io.github.softartdev.`theme-prefs`.generated.resources.system_default
 import io.github.softartdev.`theme-prefs`.generated.resources.theme
 import org.jetbrains.compose.resources.ExperimentalResourceApi
+import org.jetbrains.compose.resources.InternalResourceApi
 import org.jetbrains.compose.resources.StringResource
 import io.github.softartdev.`theme-prefs`.generated.resources.Res as InternalRes
+import kotlinx.coroutines.runBlocking
 
 //TODO try to remove after update compose multiplatform
 object Res {
@@ -72,7 +74,14 @@ val Res.string.system_default: StringResource
 val Res.string.theme: StringResource
     get() = InternalRes.string.theme
 
-suspend fun getString(resource: StringResource): String = "🦄 ${resource.key}"
+suspend fun getString(resource: StringResource, tag: String = "🦄"): String = try {
+    org.jetbrains.compose.resources.getString(resource)
+} catch (e: Throwable) {
+    e.printStackTrace()
+    "$tag:${resource.key}"
+}
 
 @Composable
-fun stringResource(resource: StringResource): String = "🦄 ${resource.key}"
+fun stringResource(resource: StringResource): String {
+    return runBlocking { getString(resource, tag = "❌") }
+}
