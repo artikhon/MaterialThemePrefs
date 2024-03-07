@@ -6,7 +6,6 @@ import io.github.softartdev.`theme-prefs`.generated.resources.dark
 import io.github.softartdev.`theme-prefs`.generated.resources.light
 import io.github.softartdev.`theme-prefs`.generated.resources.system_default
 import org.jetbrains.compose.resources.ExperimentalResourceApi
-import org.jetbrains.compose.resources.stringResource
 
 enum class ThemeEnum {
     Light,

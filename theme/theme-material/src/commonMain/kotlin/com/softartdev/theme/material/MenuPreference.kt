@@ -21,7 +21,7 @@ import com.softartdev.theme.pref.ThemePrefs
 import com.softartdev.theme.pref.choose_theme
 import com.softartdev.theme.pref.theme
 import org.jetbrains.compose.resources.ExperimentalResourceApi
-import org.jetbrains.compose.resources.stringResource
+import com.softartdev.theme.pref.stringResource
 
 @Composable
 fun ThemePreferencesCategory() = PreferenceCategory(

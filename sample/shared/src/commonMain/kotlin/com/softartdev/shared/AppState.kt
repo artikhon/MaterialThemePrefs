@@ -16,7 +16,7 @@ import com.softartdev.theme.pref.ThemePrefs
 import com.softartdev.theme.pref.switch_to_material_design_2
 import com.softartdev.theme.pref.switch_to_material_design_3
 import org.jetbrains.compose.resources.ExperimentalResourceApi
-import org.jetbrains.compose.resources.stringResource
+import com.softartdev.theme.pref.stringResource
 
 object AppState {
     val showMaterial3: MutableState<Boolean> = mutableStateOf(false)

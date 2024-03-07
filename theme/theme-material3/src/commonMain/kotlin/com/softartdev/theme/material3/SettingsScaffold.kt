@@ -18,7 +18,7 @@ import androidx.compose.ui.graphics.vector.ImageVector
 import com.softartdev.theme.pref.Res
 import com.softartdev.theme.pref.settings
 import org.jetbrains.compose.resources.ExperimentalResourceApi
-import org.jetbrains.compose.resources.stringResource
+import com.softartdev.theme.pref.stringResource
 
 @Composable
 fun SettingsScaffold(

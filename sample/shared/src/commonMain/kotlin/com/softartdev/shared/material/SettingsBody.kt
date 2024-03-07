@@ -20,7 +20,7 @@ import com.softartdev.theme.pref.PreferableMaterialTheme.themePrefs
 import com.softartdev.theme.pref.Res
 import com.softartdev.theme.pref.material_version
 import org.jetbrains.compose.resources.ExperimentalResourceApi
-import org.jetbrains.compose.resources.stringResource
+import com.softartdev.theme.pref.stringResource
 import kotlin.experimental.ExperimentalObjCRefinement
 import kotlin.native.HiddenFromObjC
 

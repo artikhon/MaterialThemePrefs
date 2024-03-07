@@ -16,7 +16,7 @@ import com.softartdev.theme.pref.cancel
 import com.softartdev.theme.pref.choose_theme
 import com.softartdev.theme.pref.ok
 import org.jetbrains.compose.resources.ExperimentalResourceApi
-import org.jetbrains.compose.resources.stringResource
+import com.softartdev.theme.pref.stringResource
 
 @Composable
 fun ThemeDialog(

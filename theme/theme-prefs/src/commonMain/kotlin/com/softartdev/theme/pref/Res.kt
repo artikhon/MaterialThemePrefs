@@ -2,6 +2,7 @@
 
 package com.softartdev.theme.pref
 
+import androidx.compose.runtime.Composable
 import io.github.softartdev.`theme-prefs`.generated.resources.cancel
 import io.github.softartdev.`theme-prefs`.generated.resources.choose_theme
 import io.github.softartdev.`theme-prefs`.generated.resources.dark
@@ -17,8 +18,8 @@ import io.github.softartdev.`theme-prefs`.generated.resources.switch_to_material
 import io.github.softartdev.`theme-prefs`.generated.resources.system_default
 import io.github.softartdev.`theme-prefs`.generated.resources.theme
 import org.jetbrains.compose.resources.ExperimentalResourceApi
-import io.github.softartdev.`theme-prefs`.generated.resources.Res as InternalRes
 import org.jetbrains.compose.resources.StringResource
+import io.github.softartdev.`theme-prefs`.generated.resources.Res as InternalRes
 
 //TODO try to remove after update compose multiplatform
 object Res {
@@ -70,3 +71,8 @@ val Res.string.system_default: StringResource
 
 val Res.string.theme: StringResource
     get() = InternalRes.string.theme
+
+suspend fun getString(resource: StringResource): String = "🦄 ${resource.key}"
+
+@Composable
+fun stringResource(resource: StringResource): String = "🦄 ${resource.key}"
