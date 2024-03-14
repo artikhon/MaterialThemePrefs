@@ -1,10 +1,10 @@
 package com.softartdev.theme.pref
 
 import androidx.compose.runtime.Composable
-import io.github.softartdev.`theme-prefs`.generated.resources.Res
-import io.github.softartdev.`theme-prefs`.generated.resources.dark
-import io.github.softartdev.`theme-prefs`.generated.resources.light
-import io.github.softartdev.`theme-prefs`.generated.resources.system_default
+import io.github.softartdev.theme_prefs.generated.resources.Res
+import io.github.softartdev.theme_prefs.generated.resources.dark
+import io.github.softartdev.theme_prefs.generated.resources.light
+import io.github.softartdev.theme_prefs.generated.resources.system_default
 import org.jetbrains.compose.resources.ExperimentalResourceApi
 
 enum class ThemeEnum {

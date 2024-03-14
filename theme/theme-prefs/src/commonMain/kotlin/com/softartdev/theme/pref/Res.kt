@@ -1,27 +1,26 @@
-@file:OptIn(ExperimentalResourceApi::class, InternalResourceApi::class)
+@file:OptIn(ExperimentalResourceApi::class)
 
 package com.softartdev.theme.pref
 
 import androidx.compose.runtime.Composable
-import io.github.softartdev.`theme-prefs`.generated.resources.cancel
-import io.github.softartdev.`theme-prefs`.generated.resources.choose_theme
-import io.github.softartdev.`theme-prefs`.generated.resources.dark
-import io.github.softartdev.`theme-prefs`.generated.resources.error_title
-import io.github.softartdev.`theme-prefs`.generated.resources.light
-import io.github.softartdev.`theme-prefs`.generated.resources.material_theme_prefs
-import io.github.softartdev.`theme-prefs`.generated.resources.material_version
-import io.github.softartdev.`theme-prefs`.generated.resources.ok
-import io.github.softartdev.`theme-prefs`.generated.resources.set_by_byttery_saver
-import io.github.softartdev.`theme-prefs`.generated.resources.settings
-import io.github.softartdev.`theme-prefs`.generated.resources.switch_to_material_design_2
-import io.github.softartdev.`theme-prefs`.generated.resources.switch_to_material_design_3
-import io.github.softartdev.`theme-prefs`.generated.resources.system_default
-import io.github.softartdev.`theme-prefs`.generated.resources.theme
-import org.jetbrains.compose.resources.ExperimentalResourceApi
-import org.jetbrains.compose.resources.InternalResourceApi
-import org.jetbrains.compose.resources.StringResource
-import io.github.softartdev.`theme-prefs`.generated.resources.Res as InternalRes
+import io.github.softartdev.theme_prefs.generated.resources.cancel
+import io.github.softartdev.theme_prefs.generated.resources.choose_theme
+import io.github.softartdev.theme_prefs.generated.resources.dark
+import io.github.softartdev.theme_prefs.generated.resources.error_title
+import io.github.softartdev.theme_prefs.generated.resources.light
+import io.github.softartdev.theme_prefs.generated.resources.material_theme_prefs
+import io.github.softartdev.theme_prefs.generated.resources.material_version
+import io.github.softartdev.theme_prefs.generated.resources.ok
+import io.github.softartdev.theme_prefs.generated.resources.set_by_byttery_saver
+import io.github.softartdev.theme_prefs.generated.resources.settings
+import io.github.softartdev.theme_prefs.generated.resources.switch_to_material_design_2
+import io.github.softartdev.theme_prefs.generated.resources.switch_to_material_design_3
+import io.github.softartdev.theme_prefs.generated.resources.system_default
+import io.github.softartdev.theme_prefs.generated.resources.theme
 import kotlinx.coroutines.runBlocking
+import org.jetbrains.compose.resources.ExperimentalResourceApi
+import org.jetbrains.compose.resources.StringResource
+import io.github.softartdev.theme_prefs.generated.resources.Res as InternalRes
 
 //TODO try to remove after update compose multiplatform
 object Res {
