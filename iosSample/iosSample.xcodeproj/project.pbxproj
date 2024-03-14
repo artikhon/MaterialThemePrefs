@@ -62,6 +62,7 @@
 				75D38B032831E5C0002264D6 /* Compile Kotlin */,
 				75D38AE92831DB26002264D6 /* Frameworks */,
 				75D38AEA2831DB26002264D6 /* Resources */,
+				99AA9D5F2BA3497E00EA5900 /* copy compose res */,
 			);
 			buildRules = (
 			);
@@ -135,6 +136,24 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "cd ..\n\n./gradlew linkDebugExecutableIosSimulatorArm64\n\ncp sample/ios/build/bin/iosSimulatorArm64/debugExecutable/ios.kexe \"$TARGET_BUILD_DIR/$EXECUTABLE_PATH\"\n";
+		};
+		99AA9D5F2BA3497E00EA5900 /* copy compose res */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "copy compose res";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "mkdir -p \"$BUILT_PRODUCTS_DIR\"/\"$CONTENTS_FOLDER_PATH\"/compose-resources\n\ncp -r \"$SRCROOT\"/../theme/theme-prefs/src/commonMain/composeResources/* \\\n    \"$BUILT_PRODUCTS_DIR\"/\"$CONTENTS_FOLDER_PATH\"/compose-resources\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
