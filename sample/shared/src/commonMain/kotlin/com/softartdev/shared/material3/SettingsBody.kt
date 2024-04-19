@@ -17,9 +17,9 @@ import com.softartdev.theme.material3.SettingsScaffold
 import com.softartdev.theme.material3.ThemePreferenceItem
 import com.softartdev.theme.material3.ThemePreferencesCategory
 import com.softartdev.theme.pref.PreferableMaterialTheme.themePrefs
-import com.softartdev.theme.pref.Res
-import com.softartdev.theme.pref.material_version
+import io.github.softartdev.theme_prefs.generated.resources.Res
 import com.softartdev.theme.pref.stringResource
+import io.github.softartdev.theme_prefs.generated.resources.material_version
 import org.jetbrains.compose.resources.ExperimentalResourceApi
 import kotlin.experimental.ExperimentalObjCRefinement
 import kotlin.native.HiddenFromObjC

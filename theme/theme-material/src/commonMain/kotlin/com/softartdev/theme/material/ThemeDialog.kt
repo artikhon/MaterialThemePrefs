@@ -10,13 +10,13 @@ import androidx.compose.runtime.MutableState
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import com.softartdev.theme.pref.DialogHolder
-import com.softartdev.theme.pref.Res
+import io.github.softartdev.theme_prefs.generated.resources.Res
 import com.softartdev.theme.pref.ThemeEnum
-import com.softartdev.theme.pref.cancel
-import com.softartdev.theme.pref.choose_theme
-import com.softartdev.theme.pref.ok
 import org.jetbrains.compose.resources.ExperimentalResourceApi
 import com.softartdev.theme.pref.stringResource
+import io.github.softartdev.theme_prefs.generated.resources.cancel
+import io.github.softartdev.theme_prefs.generated.resources.choose_theme
+import io.github.softartdev.theme_prefs.generated.resources.ok
 
 @Composable
 fun ThemeDialog(

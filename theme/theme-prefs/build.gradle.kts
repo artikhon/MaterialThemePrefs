@@ -45,6 +45,9 @@ android {
     }
     namespace = "com.softartdev.theme.pref"
 }
+compose.resources {
+    publicResClass = true
+}
 tasks.withType<AbstractPublishToMaven>().configureEach {
     dependsOn(tasks.withType<Sign>())
 }

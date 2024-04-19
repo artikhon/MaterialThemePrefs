@@ -10,13 +10,13 @@ import androidx.compose.runtime.ReadOnlyComposable
 import androidx.compose.runtime.mutableStateOf
 import com.softartdev.theme.pref.LocalThemePrefs
 import com.softartdev.theme.pref.PreferableMaterialTheme.themePrefs
-import com.softartdev.theme.pref.Res
 import com.softartdev.theme.pref.ThemeEnum
 import com.softartdev.theme.pref.ThemePrefs
-import com.softartdev.theme.pref.switch_to_material_design_2
-import com.softartdev.theme.pref.switch_to_material_design_3
-import org.jetbrains.compose.resources.ExperimentalResourceApi
 import com.softartdev.theme.pref.stringResource
+import io.github.softartdev.theme_prefs.generated.resources.Res
+import io.github.softartdev.theme_prefs.generated.resources.switch_to_material_design_2
+import io.github.softartdev.theme_prefs.generated.resources.switch_to_material_design_3
+import org.jetbrains.compose.resources.ExperimentalResourceApi
 
 object AppState {
     val showMaterial3: MutableState<Boolean> = mutableStateOf(false)

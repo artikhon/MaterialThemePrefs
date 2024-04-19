@@ -17,10 +17,10 @@ import com.softartdev.theme.material.SettingsScaffold
 import com.softartdev.theme.material.ThemePreferenceItem
 import com.softartdev.theme.material.ThemePreferencesCategory
 import com.softartdev.theme.pref.PreferableMaterialTheme.themePrefs
-import com.softartdev.theme.pref.Res
-import com.softartdev.theme.pref.material_version
+import io.github.softartdev.theme_prefs.generated.resources.Res
 import org.jetbrains.compose.resources.ExperimentalResourceApi
 import com.softartdev.theme.pref.stringResource
+import io.github.softartdev.theme_prefs.generated.resources.material_version
 import kotlin.experimental.ExperimentalObjCRefinement
 import kotlin.native.HiddenFromObjC
 

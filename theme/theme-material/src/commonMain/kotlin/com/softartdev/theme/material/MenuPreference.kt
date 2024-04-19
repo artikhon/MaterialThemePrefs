@@ -16,12 +16,12 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.vector.ImageVector
 import com.softartdev.theme.pref.LocalThemePrefs
-import com.softartdev.theme.pref.Res
 import com.softartdev.theme.pref.ThemePrefs
-import com.softartdev.theme.pref.choose_theme
-import com.softartdev.theme.pref.theme
-import org.jetbrains.compose.resources.ExperimentalResourceApi
 import com.softartdev.theme.pref.stringResource
+import io.github.softartdev.theme_prefs.generated.resources.Res
+import io.github.softartdev.theme_prefs.generated.resources.choose_theme
+import io.github.softartdev.theme_prefs.generated.resources.theme
+import org.jetbrains.compose.resources.ExperimentalResourceApi
 
 @Composable
 fun ThemePreferencesCategory() = PreferenceCategory(

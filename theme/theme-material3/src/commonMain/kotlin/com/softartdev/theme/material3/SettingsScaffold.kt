@@ -15,10 +15,10 @@ import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBar
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.graphics.vector.ImageVector
-import com.softartdev.theme.pref.Res
-import com.softartdev.theme.pref.settings
-import org.jetbrains.compose.resources.ExperimentalResourceApi
 import com.softartdev.theme.pref.stringResource
+import io.github.softartdev.theme_prefs.generated.resources.Res
+import io.github.softartdev.theme_prefs.generated.resources.settings
+import org.jetbrains.compose.resources.ExperimentalResourceApi
 
 @Composable
 fun SettingsScaffold(
