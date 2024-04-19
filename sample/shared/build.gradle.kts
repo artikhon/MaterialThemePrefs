@@ -1,3 +1,6 @@
+import com.android.build.gradle.internal.lint.AndroidLintAnalysisTask
+import com.android.build.gradle.internal.lint.LintModelWriterTask
+
 plugins {
     kotlin("multiplatform")
     id("org.jetbrains.compose")
@@ -42,4 +45,7 @@ android {
         targetCompatibility = JavaVersion.toVersion(rootProject.extra["jdk_version"] as Int)
     }
     namespace = "com.softartdev.shared"
+}
+(tasks.withType<AndroidLintAnalysisTask>() + tasks.withType<LintModelWriterTask>()).forEach {
+    it.mustRunAfter(tasks.named("generateResourceAccessorsForAndroidUnitTest"))
 }

@@ -14,7 +14,7 @@ kotlin {
         compilations.all {
             kotlinOptions.jvmTarget = "${rootProject.extra["jdk_version"] as Int}"
         }
-        withJava()
+//        withJava()
     }
     sourceSets {
         jvmMain.dependencies {

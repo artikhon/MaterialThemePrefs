@@ -1,3 +1,6 @@
+import com.android.build.gradle.internal.lint.AndroidLintAnalysisTask
+import com.android.build.gradle.internal.lint.LintModelWriterTask
+
 plugins {
     kotlin("multiplatform")
     id("org.jetbrains.compose")
@@ -46,4 +49,7 @@ android {
 }
 tasks.withType<AbstractPublishToMaven>().configureEach {
     dependsOn(tasks.withType<Sign>())
+}
+(tasks.withType<AndroidLintAnalysisTask>() + tasks.withType<LintModelWriterTask>()).forEach {
+    it.mustRunAfter(tasks.named("generateResourceAccessorsForAndroidUnitTest"))
 }
