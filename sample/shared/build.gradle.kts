@@ -47,5 +47,5 @@ android {
     namespace = "com.softartdev.shared"
 }
 (tasks.withType<AndroidLintAnalysisTask>() + tasks.withType<LintModelWriterTask>()).forEach {
-    it.mustRunAfter(tasks.named("generateResourceAccessorsForAndroidUnitTest"))
+    it.dependsOn(tasks.named("generateResourceAccessorsForAndroidUnitTest"))
 }

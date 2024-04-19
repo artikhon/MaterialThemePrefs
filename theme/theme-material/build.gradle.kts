@@ -51,5 +51,5 @@ tasks.withType<AbstractPublishToMaven>().configureEach {
     dependsOn(tasks.withType<Sign>())
 }
 (tasks.withType<AndroidLintAnalysisTask>() + tasks.withType<LintModelWriterTask>()).forEach {
-    it.mustRunAfter(tasks.named("generateResourceAccessorsForAndroidUnitTest"))
+    it.dependsOn(tasks.named("generateResourceAccessorsForAndroidUnitTest"))
 }
