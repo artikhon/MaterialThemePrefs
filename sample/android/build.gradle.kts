@@ -1,5 +1,6 @@
 plugins {
     id("org.jetbrains.compose")
+    id("org.jetbrains.kotlin.plugin.compose")
     id("com.android.application")
     kotlin("android")
 }
@@ -16,13 +17,10 @@ android {
         sourceCompatibility = JavaVersion.toVersion(rootProject.extra["jdk_version"] as Int)
         targetCompatibility = JavaVersion.toVersion(rootProject.extra["jdk_version"] as Int)
     }
-    kotlinOptions {
-        jvmTarget = "${rootProject.extra["jdk_version"] as Int}"
-    }
+    kotlinOptions.jvmTarget = "${rootProject.extra["jdk_version"] as Int}"
     namespace = "com.softartdev.sample"
 }
 dependencies {
     implementation(project(":sample:shared"))
-    implementation("androidx.activity:activity-compose:1.8.2")
-    implementation("androidx.appcompat:appcompat:1.6.1")
+    implementation("androidx.activity:activity-compose:1.9.0")
 }

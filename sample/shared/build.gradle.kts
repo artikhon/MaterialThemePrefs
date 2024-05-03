@@ -1,34 +1,29 @@
+@file:Suppress("OPT_IN_USAGE")
+
 import com.android.build.gradle.internal.lint.AndroidLintAnalysisTask
 import com.android.build.gradle.internal.lint.LintModelWriterTask
+import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 
 plugins {
     kotlin("multiplatform")
     id("org.jetbrains.compose")
+    id("org.jetbrains.kotlin.plugin.compose")
     id("com.android.library")
 }
 
 kotlin {
     jvmToolchain(rootProject.extra["jdk_version"] as Int)
     jvm {
-        compilations.all {
-            kotlinOptions.jvmTarget = "${rootProject.extra["jdk_version"] as Int}"
-        }
+        compilerOptions.jvmTarget = JvmTarget.fromTarget("${rootProject.extra["jdk_version"]}")
     }
     androidTarget()
-    iosX64()
-    iosArm64()
+//    iosX64()
+//    iosArm64()
     iosSimulatorArm64()
     sourceSets {
         commonMain.dependencies {
-            implementation(project(":theme:theme-prefs"))
-            implementation(project(":theme:theme-material"))
-            implementation(project(":theme:theme-material3"))
-            implementation(compose.runtime)
-            implementation(compose.foundation)
-            implementation(compose.material)
-            implementation(compose.material3)
-            implementation(compose.materialIconsExtended)
-            implementation(compose.components.resources)
+            api(project(":theme:theme-material"))
+            api(project(":theme:theme-material3"))
         }
         jvmMain.dependencies {
             implementation(compose.preview)
@@ -46,6 +41,9 @@ android {
     }
     namespace = "com.softartdev.shared"
 }
-(tasks.withType<AndroidLintAnalysisTask>() + tasks.withType<LintModelWriterTask>()).forEach {
-    it.dependsOn(tasks.named("generateResourceAccessorsForAndroidUnitTest"))
+tasks.withType<AndroidLintAnalysisTask>{
+    dependsOn("generateResourceAccessorsForAndroidUnitTest")
+}
+tasks.withType<LintModelWriterTask>{
+    dependsOn("generateResourceAccessorsForAndroidUnitTest")
 }

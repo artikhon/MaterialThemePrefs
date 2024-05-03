@@ -1,6 +1,11 @@
+@file:Suppress("OPT_IN_USAGE")
+
+import org.jetbrains.kotlin.gradle.dsl.JvmTarget
+
 plugins {
     kotlin("multiplatform")
     id("org.jetbrains.compose")
+    id("org.jetbrains.kotlin.plugin.compose")
     id("com.android.library")
     id("convention.publication")
 }
@@ -10,9 +15,7 @@ version = project.property("VERSION").toString()
 kotlin {
     jvmToolchain(rootProject.extra["jdk_version"] as Int)
     jvm("desktop") {
-        compilations.all {
-            kotlinOptions.jvmTarget = "${rootProject.extra["jdk_version"] as Int}"
-        }
+        compilerOptions.jvmTarget = JvmTarget.fromTarget("${rootProject.extra["jdk_version"]}")
     }
     androidTarget {
         publishLibraryVariants("release", "debug")
@@ -24,13 +27,15 @@ kotlin {
 
     sourceSets {
         commonMain.dependencies {
-            implementation(compose.foundation)
-            implementation(compose.runtime)
-            implementation(compose.ui)
-            implementation(compose.components.resources)
+            api(compose.runtime)
+            api(compose.components.resources)
+            implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.8.0")
         }
         commonTest.dependencies {
             implementation(kotlin("test"))
+        }
+        androidMain.dependencies {
+            api(compose.ui)
         }
     }
 }

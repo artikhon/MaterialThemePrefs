@@ -1,9 +1,13 @@
+@file:Suppress("OPT_IN_USAGE")
+
 import com.android.build.gradle.internal.lint.AndroidLintAnalysisTask
 import com.android.build.gradle.internal.lint.LintModelWriterTask
+import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 
 plugins {
     kotlin("multiplatform")
     id("org.jetbrains.compose")
+    id("org.jetbrains.kotlin.plugin.compose")
     id("com.android.library")
     id("convention.publication")
 }
@@ -13,9 +17,7 @@ version = project.property("VERSION").toString()
 kotlin {
     jvmToolchain(rootProject.extra["jdk_version"] as Int)
     jvm("desktop") {
-        compilations.all {
-            kotlinOptions.jvmTarget = "${rootProject.extra["jdk_version"] as Int}"
-        }
+        compilerOptions.jvmTarget = JvmTarget.fromTarget("${rootProject.extra["jdk_version"]}")
     }
     androidTarget {
         publishLibraryVariants("release", "debug")
@@ -26,11 +28,10 @@ kotlin {
     sourceSets {
         commonMain.dependencies {
             api(project(":theme:theme-prefs"))
-            implementation(compose.runtime)
-            implementation(compose.foundation)
-            implementation(compose.material3)
-            implementation(compose.materialIconsExtended)
-            implementation(compose.components.resources)
+            api(compose.foundation)
+            api(compose.material3)
+            api(compose.materialIconsExtended)
+            api(compose.components.resources)
         }
         commonTest.dependencies {
             implementation(kotlin("test"))
@@ -50,6 +51,9 @@ android {
 tasks.withType<AbstractPublishToMaven>().configureEach {
     dependsOn(tasks.withType<Sign>())
 }
-(tasks.withType<AndroidLintAnalysisTask>() + tasks.withType<LintModelWriterTask>()).forEach {
-    it.dependsOn(tasks.named("generateResourceAccessorsForAndroidUnitTest"))
+tasks.withType<AndroidLintAnalysisTask>{
+    dependsOn("generateResourceAccessorsForAndroidUnitTest")
+}
+tasks.withType<LintModelWriterTask>{
+    dependsOn("generateResourceAccessorsForAndroidUnitTest")
 }
