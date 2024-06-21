@@ -1,9 +1,9 @@
 buildscript {
-    extra["kotlin_version"] = "2.0.0"
+    extra["kotlin_version"] = "2.0.20-Beta1"
     extra["android_min_sdk_version"] = 21
     extra["android_compile_sdk_version"] = 34
     extra["jdk_version"] = 17
-    extra["moko_resources_version"] = "0.24.0"
+    extra["moko_resources_version"] = "0.24.1"
     repositories {
         gradlePluginPortal()
         google()
