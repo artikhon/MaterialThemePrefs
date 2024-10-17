@@ -12,7 +12,7 @@ buildscript {
         classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:${rootProject.extra["kotlin_version"]}")
         classpath("org.jetbrains.kotlin:compose-compiler-gradle-plugin:${rootProject.extra["kotlin_version"]}")
         classpath("com.android.tools.build:gradle:8.7.0")
-        classpath("org.jetbrains.compose:compose-gradle-plugin:1.6.11")
+        classpath("org.jetbrains.compose:compose-gradle-plugin:1.7.0")
     }
 }
 allprojects {
